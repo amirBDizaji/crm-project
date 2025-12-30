@@ -29,4 +29,12 @@ const customerSchema = new Schema({
     default: () => Date.now,
     immutable: true,
   },
+  updatedAt: {
+    type: Date,
+    default: () => Date.now,
+  },
 });
+
+const Customer = models.Customer || model("Customer", customerSchema);
+
+export default Customer;
