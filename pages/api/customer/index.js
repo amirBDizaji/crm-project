@@ -22,13 +22,11 @@ export default async function handler(req, res) {
 
     try {
       const customer = await Customer.create(data);
-      res
-        .status(201)
-        .json({
-          status: "success",
-          message: "Data created successfully",
-          data: customer,
-        });
+      res.status(201).json({
+        status: "success",
+        message: "Data created successfully",
+        data: customer,
+      });
     } catch (error) {
       console.log(error);
       res
